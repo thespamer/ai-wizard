@@ -1,0 +1,15 @@
+flowchart TD
+    A[Start] --> B[Enter Project Requirements]
+    B --> C[Validate Input]
+    C -->|Valid| D[Send to Backend]
+    C -->|Invalid| B
+    D --> E[LLM Analysis]
+    E --> F[Parse Response]
+    F -->|Success| G[Calculate Costs]
+    F -->|Error| H[Handle Error]
+    G --> I[Generate Schedule]
+    I --> J[Compile Results]
+    J --> K[Display Summary]
+    H --> L[Show Error Message]
+    K --> M[Export/Save]
+    M --> N[End]

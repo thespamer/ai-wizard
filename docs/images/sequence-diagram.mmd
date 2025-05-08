@@ -1,0 +1,18 @@
+sequenceDiagram
+    participant U as User
+    participant F as Frontend
+    participant B as Backend
+    participant LLM as Mistral LLM
+    participant C as Cost Calculator
+
+    U->>F: Fill Project Requirements
+    F->>F: Validate Form
+    F->>B: POST /api/analyze
+    B->>LLM: Send Analysis Prompt
+    LLM-->>B: Return Complexity Analysis
+    B->>C: Calculate Project Costs
+    C-->>B: Return Cost Breakdown
+    B->>C: Generate Schedule
+    C-->>B: Return Project Timeline
+    B-->>F: Return Complete Analysis
+    F-->>U: Display Project Summary

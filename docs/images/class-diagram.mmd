@@ -1,0 +1,45 @@
+classDiagram
+    class ProjectAnalyzer {
+        -mistralClient
+        +analyzeComplexity(projectRequirements)
+        -buildComplexityAnalysisPrompt(requirements)
+        -parseComplexityAnalysis(response)
+        -calculateProjectSummary(requirements, llmAnalysis)
+        -determineComplexityLevel(factors)
+    }
+
+    class ProjectComplexity {
+        +COMPLEXITY_LEVELS
+        +BASE_HOURS
+        +COMPLEXITY_FACTORS
+        +calculateAdjustedHours(baseHours, multiplier, factors)
+        +calculateCosts(hours)
+        +generateSchedule(hours)
+    }
+
+    class WizardStepper {
+        -steps
+        -activeStep
+        +handleNext()
+        +handleBack()
+        +handleFinish()
+    }
+
+    class RequirementsForm {
+        -formData
+        +handleSubmit()
+        +handleChange()
+        +validate()
+    }
+
+    class ProjectSummary {
+        -projectData
+        +renderCosts()
+        +renderSchedule()
+        +renderComplexity()
+    }
+
+    ProjectAnalyzer --> ProjectComplexity : uses
+    WizardStepper --> RequirementsForm : contains
+    WizardStepper --> ProjectSummary : contains
+    ProjectAnalyzer --> ProjectSummary : provides data
