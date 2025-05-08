@@ -324,5 +324,4 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 ## 🙋‍♂️ Suporte
 
 - Abra uma issue para reportar bugs
-- Consulte a [documentação das APIs](docs/API.md) para integrações
-- Entre em contato com a equipe de desenvolvimento para dúvidas
+- Entre em contato comigo para dúvidas juliano641@gmail.com
